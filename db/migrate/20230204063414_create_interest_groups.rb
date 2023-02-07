@@ -4,7 +4,7 @@ class CreateInterestGroups < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :description
       t.string :location
-      t.weekday :day
+      t.integer :day
       t.time :time
       t.boolean :is_weekly
 
