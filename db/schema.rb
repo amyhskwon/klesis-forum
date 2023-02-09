@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_04_064354) do
+ActiveRecord::Schema.define(version: 2023_02_07_233503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,22 +19,22 @@ ActiveRecord::Schema.define(version: 2023_02_04_064354) do
     t.string "name"
     t.string "description"
     t.string "location"
-    t.datetime "start_date"
-    t.datetime "end_date"
     t.boolean "is_weekly"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "weekday"
+    t.string "time"
   end
 
   create_table "interest_groups", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.string "location"
-    t.integer "day"
-    t.time "time"
+    t.integer "weekday"
     t.boolean "is_weekly"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "time"
   end
 
   create_table "memberships", force: :cascade do |t|
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2023_02_04_064354) do
     t.string "password_digest"
     t.string "photo"
     t.integer "grad_year"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.boolean "admin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
