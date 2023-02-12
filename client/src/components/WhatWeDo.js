@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 // import { Box } from "../styles";
 
 function WhatWeDo() {
@@ -8,7 +8,7 @@ function WhatWeDo() {
       {/* <Box> */}
       <img
         src="https://endlessicons.com/wp-content/uploads/2012/11/image-holder-icon-614x460.png"
-        alt="image holder"
+        alt="place holder"
       />
       <h4>Interest Groups</h4>
       <p>

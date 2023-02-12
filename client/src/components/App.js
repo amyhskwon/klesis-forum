@@ -7,9 +7,10 @@ import Events from "../pages/Events";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import WhatWeDo from "./WhatWeDo";
+import ProfilePage from "../pages/ProfilePage";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     fetch("/me").then((res) => {
@@ -19,7 +20,6 @@ function App() {
     });
   }, []);
 
-  // if (!user)
   return (
     <>
       <div>
@@ -30,13 +30,16 @@ function App() {
               <About />
             </Route>
             <Route path="/interest_groups">
-              <InterestGroupPage />
+              <InterestGroupPage user={user} />
             </Route>
             <Route path="/events">
-              <Events />
+              <Events user={user} />
             </Route>
             <Route path="/contact">
               <Contact />
+            </Route>
+            <Route path="/profile">
+              <ProfilePage user={user} />
             </Route>
             <Route path="/login">
               <Login onLogin={setUser} />
@@ -49,34 +52,6 @@ function App() {
       </div>
     </>
   );
-
-  // return (
-  //   <div>
-  //     <NavBar setUser={setUser} />
-  //     <main>
-  //       <Switch>
-  //         <Route path="/about">
-  //           <About />
-  //         </Route>
-  //         <Route path="/interest_groups">
-  //           <InterestGroupPage />
-  //         </Route>
-  //         <Route path="/events">
-  //           <Events />
-  //         </Route>
-  //         <Route path="/contact">
-  //           <Contact />
-  //         </Route>
-  //         <Route path="/login">
-  //           <Login onLogin={setUser} />
-  //         </Route>
-  //         <Route path="/">
-  //           <WhatWeDo />
-  //         </Route>
-  //       </Switch>
-  //     </main>
-  //   </div>
-  // );
 }
 
 export default App;

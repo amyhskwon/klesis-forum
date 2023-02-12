@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { klesislogo } from "../styles/klesislogo.png";
 
 function NavBar({ user, setUser }) {
   function handleLogout() {
@@ -16,7 +15,7 @@ function NavBar({ user, setUser }) {
       <nav>
         <NavLink exact to="/" className="logo">
           <img
-            src="../styles/klesislogo.png"
+            src="http://static1.squarespace.com/static/5b65df1fee1759e688f65d75/t/5d4a0b6253ed6c0001341b9a/1565133670213/Klesis+logo-01.png?format=1500w"
             alt="logo"
             width={98}
             height={93}
@@ -43,7 +42,12 @@ function NavBar({ user, setUser }) {
   return (
     <nav>
       <NavLink exact to="/" className="logo">
-        <img src="../styles/klesislogo.png" alt="logo" width={98} height={93} />
+        <img
+          src="http://static1.squarespace.com/static/5b65df1fee1759e688f65d75/t/5d4a0b6253ed6c0001341b9a/1565133670213/Klesis+logo-01.png?format=1500w"
+          alt="logo"
+          width={98}
+          height={93}
+        />
       </NavLink>
       <NavLink exact to="/about">
         About
@@ -56,6 +60,9 @@ function NavBar({ user, setUser }) {
       </NavLink>
       <NavLink exact to="/contact">
         Contact Us
+      </NavLink>
+      <NavLink exact to="/profile">
+        My Profile
       </NavLink>
       <NavLink onClick={handleLogout} exact to="/logout">
         Logout

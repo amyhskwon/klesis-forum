@@ -1,7 +1,12 @@
 import React from "react";
+import EventsList from "../components/EventsList";
 
-function Events() {
-  return <p>This is the events page</p>;
+function Events({ user }) {
+  return (
+    <div>
+      <EventsList user={user} />
+    </div>
+  );
 }
 
 export default Events;

@@ -2,5 +2,5 @@ class Membership < ApplicationRecord
     belongs_to :user
     belongs_to :interest_group
 
-    enum role: [:member, :moderator, :admin]
+    validates :interest_group_id, uniqueness: {scope: :user_id}
 end

@@ -13,11 +13,11 @@ Rsvp.destroy_all
 Message.destroy_all
 
 puts "Seeding users...🌱👤"
-u1 = User.create(first_name: 'Amy', last_name: 'Kwon', email: 'amy.kwon@gpmail.org', password: '12345', photo: 'https://avatars.githubusercontent.com/u/115328047?v=4', grad_year: 2020, phone_number: '415-470-0926', admin: true)
-u2 = User.create(first_name: 'Philip', last_name: 'Sun', email: 'philip.sun@gpmail.org', password: 'abcde', photo: 'https://media.licdn.com/dms/image/C5603AQGnn7f3UYIBmw/profile-displayphoto-shrink_800_800/0/1562002182041?e=1681344000&v=beta&t=h56MA8zxdBOPlsMd6PIOnnfsCOixXjlgCjOblyFWnKs', grad_year: 2019, phone_number: '925-719-0388', admin: true)
-u3 = User.create(first_name: 'Harry', last_name: 'Potter', email: 'urawizardharry@gmail.com', password: 'stupefy', photo: 'https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg', grad_year: 2023, phone_number: '925-123-4567', admin: false)
-u4 = User.create(first_name: 'Luke', last_name: 'Skywalker', email: 'lukes@hotmail.com', password: 'yoda', photo: 'https://www.toplessrobot.com/wp-content/uploads/2008/10/Episode_4_Luke_Skywalker_1.jpg', grad_year: 2024, phone_number: '626-879-2847', admin: false)
-u5 = User.create(first_name: 'Frodo', last_name: 'Baggins', email: 'iloveshire@gmail.com', password: 'precious', photo: 'https://static.wikia.nocookie.net/lotr/images/3/32/Frodo_%28FotR%29.png/revision/latest?cb=20221006065757', grad_year: 2026, phone_number: '510-398-4629', admin: false)
+u1 = User.create(first_name: 'Amy', last_name: 'Kwon', email: 'amy.kwon@gpmail.org', password: '12345', photo: 'https://avatars.githubusercontent.com/u/115328047?v=4', grad_year: 2020, phone_number: '415-470-0926', admin: true, role: 2)
+u2 = User.create(first_name: 'Philip', last_name: 'Sun', email: 'philip.sun@gpmail.org', password: 'abcde', photo: 'https://media.licdn.com/dms/image/C5603AQGnn7f3UYIBmw/profile-displayphoto-shrink_800_800/0/1562002182041?e=1681344000&v=beta&t=h56MA8zxdBOPlsMd6PIOnnfsCOixXjlgCjOblyFWnKs', grad_year: 2019, phone_number: '925-719-0388', admin: true, role: 2)
+u3 = User.create(first_name: 'Harry', last_name: 'Potter', email: 'urawizardharry@gmail.com', password: 'stupefy', photo: 'https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg', grad_year: 2023, phone_number: '925-123-4567', admin: false, role: 0)
+u4 = User.create(first_name: 'Luke', last_name: 'Skywalker', email: 'lukes@hotmail.com', password: 'yoda', photo: 'https://www.toplessrobot.com/wp-content/uploads/2008/10/Episode_4_Luke_Skywalker_1.jpg', grad_year: 2024, phone_number: '626-879-2847', admin: false, role: 1)
+u5 = User.create(first_name: 'Frodo', last_name: 'Baggins', email: 'iloveshire@gmail.com', password: 'precious', photo: 'https://static.wikia.nocookie.net/lotr/images/3/32/Frodo_%28FotR%29.png/revision/latest?cb=20221006065757', grad_year: 2026, phone_number: '510-398-4629', admin: false, role: 0)
 
 puts "Seeding interest groups...🌱🏀"
 i1 = InterestGroup.create(name: 'Basketball', description: 'Come hoop with us and create an IM team!', location: 'RSF Berkeley', weekday: 3, time: '7PM', is_weekly: true)
@@ -26,21 +26,21 @@ i3 = InterestGroup.create(name: 'C.S. Lewis Reading Club', description: 'Dive in
 i4 = InterestGroup.create(name: 'Quidditch', description: 'Score or capture the snitch! Join our quidditch IM team!', location: 'California Memorial Stadium', weekday: 5, time: '7PM', is_weekly: false)
 
 puts "Seeding memberships...🌱👑"
-m1 = Membership.create(user_id: u1.id, role: 2, interest_group_id: i3.id)
-m2 = Membership.create(user_id: u2.id, role: 2, interest_group_id: i1.id)
-m3 = Membership.create(user_id: u2.id, role: 2, interest_group_id: i2.id)
-m4 = Membership.create(user_id: u3.id, role: 0, interest_group_id: i2.id)
-m5 = Membership.create(user_id: u4.id, role: 1, interest_group_id: i1.id)
-m6 = Membership.create(user_id: u4.id, role: 0, interest_group_id: i3.id)
-m7 = Membership.create(user_id: u5.id, role: 1, interest_group_id: i3.id)
-m8 = Membership.create(user_id: u5.id, role: 1, interest_group_id: i2.id)
-m9 = Membership.create(user_id: u3.id, role: 1, interest_group_id: i4.id)
-m10 = Membership.create(user_id: u1.id, role: 2, interest_group_id: i4.id)
-m11 = Membership.create(user_id: u2.id, role: 2, interest_group_id: i4.id)
+m1 = Membership.create(user_id: u1.id, interest_group_id: i3.id)
+m2 = Membership.create(user_id: u2.id, interest_group_id: i1.id)
+m3 = Membership.create(user_id: u2.id, interest_group_id: i2.id)
+m4 = Membership.create(user_id: u3.id, interest_group_id: i2.id)
+m5 = Membership.create(user_id: u4.id, interest_group_id: i1.id)
+m6 = Membership.create(user_id: u4.id, interest_group_id: i3.id)
+m7 = Membership.create(user_id: u5.id, interest_group_id: i3.id)
+m8 = Membership.create(user_id: u5.id, interest_group_id: i2.id)
+m9 = Membership.create(user_id: u3.id, interest_group_id: i4.id)
+m10 = Membership.create(user_id: u1.id, interest_group_id: i4.id)
+m11 = Membership.create(user_id: u2.id, interest_group_id: i4.id)
 
 puts "Seeding events...🌱🗓"
 e1 = Event.create(name: 'TFN', description: 'The Friday Night', location: '2518 Durant Ave, Berkeley', weekday: 4, time: '6:30PM', is_weekly: true)
-e2 = Event.create(name: 'SWS', description: 'Sunday Worship Service', location: 'Willard Middle School', weekday: 6, time: '1PM', is_weekly: true)
+e2 = Event.create(name: 'Sierra Lodge Trip', description: 'Weekend getaway to our beloved Sierra Lodge!', location: 'Sierra Lodge', weekday: 5, time: '1PM', is_weekly: true)
 e3 = Event.create(name: 'Yosemite Trip', description: 'Freshmen getaway to Yosemite House for the weekend!', location: 'Yosemite House', weekday: 4, time: '5PM', is_weekly: false)
 e4 = Event.create(name: 'Fishing Trip', description: 'Use your free Saturday to come fish with us!', location: 'Lake Merritt', weekday: 5, time: '8AM', is_weekly: false)
 # e5 = Event.create(name: '', description: '', location: '', weekday: , end_date: '', is_weekly: )
