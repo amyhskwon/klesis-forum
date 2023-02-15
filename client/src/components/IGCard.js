@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+// import EditIG from "./EditIG";
 
 function IGCard({ ig, user }) {
   const { name, location, weekday, time, id } = ig;
-  const [memberships, setMemberships] = useState([]);
+  const [myMemberships, setMyMemberships] = useState([]);
   const [hasUserJoined, setHasUserJoined] = useState(false);
+  //   const [showEditForm, setShowEditForm] = useState(false);
 
   useEffect(() => {
-    fetch("/memberships")
+    fetch("/my_memberships")
       .then((r) => r.json())
-      .then((data) => setMemberships(data));
+      .then((data) => setMyMemberships(data));
   }, []);
 
   function isThereMembership(id) {
-    return !!memberships.find((element) => {
+    return !!myMemberships.find((element) => {
       return element.interest_group_id === id;
     });
   }
@@ -53,6 +55,12 @@ function IGCard({ ig, user }) {
       {isThereMembership(id) || hasUserJoined ? null : (
         <button onClick={handleJoinInterestGroup}>Join</button>
       )}
+      {/* {user.admin ? (
+        <button onClick={setShowEditForm(!showEditForm)}>
+          {showEditForm ? "Cancel" : "Edit Offer"}
+          <EditIG ig={ig} />
+        </button>
+      ) : null} */}
     </div>
   );
 }

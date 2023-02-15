@@ -35,7 +35,6 @@ function EventCard({ event, user }) {
   if (!user)
     return (
       <div>
-        <p>this is logged out version</p>
         <h2>{name}</h2>
         <p>{description}</p>
         <p>{location}</p>

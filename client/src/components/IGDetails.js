@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Messages from "./components/Messages";
+// import Messages from "./components/Messages";
 
-function IGDetails({ user }) {
+function IGDetails() {
   const [igDetails, setIgDetails] = useState([]);
   const id = new URLSearchParams(window.location.search).get("id");
 
   useEffect(() => {
     fetch(`/interest_groups/${id}`)
       .then((r) => r.json())
-      .then((data) => setIgDetails(data));
-  }, []);
+      .then((data) => {
+        setIgDetails(data);
+      });
+  }, [id]);
 
   return (
     <div>
@@ -19,7 +21,7 @@ function IGDetails({ user }) {
       <p>
         Time: {igDetails.weekday}, {igDetails.time}
       </p>
-      <Messages igDetails={igDetails} />
+      {/* <Messages igDetails={igDetails} /> */}
     </div>
   );
 }

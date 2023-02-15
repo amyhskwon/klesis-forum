@@ -1,7 +1,7 @@
 class RsvpsController < ApplicationController
 
     def index
-        rsvps = Rsvp.all
+        rsvps = @current_user.rsvps
         render json: rsvps
     end
 

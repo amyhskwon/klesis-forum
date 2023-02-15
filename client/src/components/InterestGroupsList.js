@@ -1,15 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import IGCard from "./IGCard";
 
-function InterestGroupsList({ user }) {
-  const [igList, setIgList] = useState([]);
-
-  useEffect(() => {
-    fetch("/interest_groups")
-      .then((r) => r.json())
-      .then((data) => setIgList(data));
-  }, []);
-
+function InterestGroupsList({ user, igList }) {
   function renderInterestGroupsList() {
     return igList.map((ig) => {
       return <IGCard key={ig.id} ig={ig} user={user} />;

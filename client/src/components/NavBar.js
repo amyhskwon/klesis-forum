@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 function NavBar({ user, setUser }) {
   function handleLogout() {

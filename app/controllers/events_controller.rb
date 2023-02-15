@@ -10,4 +10,15 @@ class EventsController < ApplicationController
         event = Event.find(params[:id])
         render json: event
     end
+
+    def create
+        event = Event.create!(event_params)
+        render json: event, status: :created
+    end
+
+    private
+
+    def event_params
+        params.permit(:name, :description, :location, :weekday, :time, :is_weekly)
+    end
 end

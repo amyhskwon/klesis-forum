@@ -13,9 +13,9 @@ function UserProfile({ user }) {
   return (
     <div>
       <img src={userDetails.photo} alt={userDetails.name} />
-      <h2>
+      <h1>
         Hello, {userDetails.first_name} {userDetails.last_name}!
-      </h2>
+      </h1>
       <h4>Class of {userDetails.grad_year}</h4>
       <p>{userDetails.email}</p>
       <p>{userDetails.phone_number}</p>

@@ -20,10 +20,10 @@ u4 = User.create(first_name: 'Luke', last_name: 'Skywalker', email: 'lukes@hotma
 u5 = User.create(first_name: 'Frodo', last_name: 'Baggins', email: 'iloveshire@gmail.com', password: 'precious', photo: 'https://static.wikia.nocookie.net/lotr/images/3/32/Frodo_%28FotR%29.png/revision/latest?cb=20221006065757', grad_year: 2026, phone_number: '510-398-4629', admin: false, role: 0)
 
 puts "Seeding interest groups...🌱🏀"
-i1 = InterestGroup.create(name: 'Basketball', description: 'Come hoop with us and create an IM team!', location: 'RSF Berkeley', weekday: 3, time: '7PM', is_weekly: true)
-i2 = InterestGroup.create(name: 'Baking', description: 'Do you love pastries? Baked goods? Join us weekly to bake!', location: '2239 Dwight Street, Berkeley', weekday: 2, time: '6:30PM', is_weekly: true)
-i3 = InterestGroup.create(name: 'C.S. Lewis Reading Club', description: 'Dive into the deep mind of C.S. Lewis - read and have discussions through some of his most famous books!', location: '1951 Cafe', weekday: 4, time: '4PM', is_weekly: true)
-i4 = InterestGroup.create(name: 'Quidditch', description: 'Score or capture the snitch! Join our quidditch IM team!', location: 'California Memorial Stadium', weekday: 5, time: '7PM', is_weekly: false)
+i1 = InterestGroup.create(name: 'Basketball', description: 'Come hoop with us and create an IM team!', location: 'RSF Berkeley', weekday: 3, time: '7PM', is_weekly: true, moderator: 2)
+i2 = InterestGroup.create(name: 'Baking', description: 'Do you love pastries? Baked goods? Join us weekly to bake!', location: '2239 Dwight Street, Berkeley', weekday: 2, time: '6:30PM', is_weekly: true, moderator: 4)
+i3 = InterestGroup.create(name: 'C.S. Lewis Reading Club', description: 'Dive into the deep mind of C.S. Lewis - read and have discussions through some of his most famous books!', location: '1951 Cafe', weekday: 4, time: '4PM', is_weekly: true, moderator: 5)
+i4 = InterestGroup.create(name: 'Quidditch', description: 'Score or capture the snitch! Join our quidditch IM team!', location: 'California Memorial Stadium', weekday: 5, time: '7PM', is_weekly: false, moderator: 3)
 
 puts "Seeding memberships...🌱👑"
 m1 = Membership.create(user_id: u1.id, interest_group_id: i3.id)
