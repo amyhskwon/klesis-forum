@@ -42,7 +42,7 @@ function App() {
               <About />
             </Route>
             <Route path={"/my_memberships"}>
-              <IGDetailsPage />
+              <IGDetailsPage user={user} />
             </Route>
             <Route path="/interest_groups">
               <InterestGroupPage user={user} igList={igList} />

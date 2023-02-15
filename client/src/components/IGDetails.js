@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-// import Messages from "./components/Messages";
+import Messages from "../components/Messages";
 
-function IGDetails() {
-  const [igDetails, setIgDetails] = useState([]);
+function IGDetails({ user }) {
+  const [igDetails, setIgDetails] = useState({});
   const id = new URLSearchParams(window.location.search).get("id");
 
   useEffect(() => {
@@ -21,7 +21,14 @@ function IGDetails() {
       <p>
         Time: {igDetails.weekday}, {igDetails.time}
       </p>
-      {/* <Messages igDetails={igDetails} /> */}
+      {igDetails.messages ? (
+        <Messages
+          igDetails={igDetails}
+          messages={igDetails.messages}
+          users={igDetails.users}
+          user={user}
+        />
+      ) : null}
     </div>
   );
 }

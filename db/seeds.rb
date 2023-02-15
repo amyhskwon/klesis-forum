@@ -56,8 +56,9 @@ r5 = Rsvp.create(user_id: u1.id, event_id: e1.id)
 
 
 puts "Seeding messages...🌱💬"
-c1 = Message.create(user_id: u2.id, interest_group_id: i1.id, content: 'We will meet at HB this week! See you there!', time: '14:00')
-# c2 = Message.create(user_id: , interest_group_id: , content: '', time: '')
+c1 = Message.create(user_id: u4.id, interest_group_id: i1.id, content: 'Where are we hooping this week?')
+c2 = Message.create(user_id: u2.id, interest_group_id: i1.id, content: 'We will meet at HB this week! See you there!')
+# c2 = Message.create(user_id: u4.id, interest_group_id: i1.id, content: 'Where are we hooping this week?', time: '13:30')
 # c3 = Message.create(user_id: , interest_group_id: , content: '', time: '')
 # c4 = Message.create(user_id: , interest_group_id: , content: '', time: '')
 # c5 = Message.create(user_id: , interest_group_id: , content: '', time: '')
