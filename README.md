@@ -20,12 +20,12 @@ I hope you enjoy using Klesis Forum! 😊
 
 1. Fork and Clone this repository.
 2. Navigate to the back-end directory and run bundle install to install necessary gems:
-$ bundle install
+`$ bundle install`
 3. Migrate the database:
-$ rails db:migrate
+`$ rails db:migrate`
 4. Start the rails server:
-$ rails s
+`$ rails s`
 5. Navigate to the front-end directory and install necessary dependencies:
-$ npm i
+`$ npm i`
 6. You're now all set! From the front-end, run the app:
-$ npm start
+`$ npm start`
